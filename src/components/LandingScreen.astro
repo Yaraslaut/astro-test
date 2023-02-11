@@ -1,5 +1,7 @@
 ---
 import LeftPanel from "./LeftPanel.astro"
+import { Image, Picture } from '@astrojs/image/components';
+const remoteImage = "https://raw.githubusercontent.com/contour-terminal/contour/4f565357720915402aca5ca63ca1fa812ed4741f/docs/screenshots/contour-notcurses-ncneofetch.png";
 ---
 
 <div id="landing-screen" class="bg-slate-900">
@@ -19,6 +21,10 @@ import LeftPanel from "./LeftPanel.astro"
         is a modern and actually fast, modal, virtual terminal emulator, for everyday use. <br>
         It is aiming for power users with a modern feature mindset.
       </p>
+
+      <!--For remote images, the desired dimensions and format are required-->
+      <Image src={remoteImage} width={1300} aspectRatio="16:7" format="png" alt="" />
+
     </div>
     <div></div>
 
@@ -29,29 +35,35 @@ import LeftPanel from "./LeftPanel.astro"
     defer
     ></script>
   <script
-    src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"
+    src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"
     is:inline
     defer
-    ></script>
+  ></script>
 
   <script>
    addEventListener("DOMContentLoaded", (event) => {
-
-     VANTA.HALO({
+     VANTA.NET({
        el: "#landing-screen",
        mouseControls: true,
        touchControls: true,
-       gyroControls: true,
-       minHeight: 20.00,
-       minWidth: 20.00,
-       baseColor: 0x57752e,
-       backgroundColor: 0x051221,
-       amplitudeFactor: 1.0,
-       xOffset: 0.1,
-       yOffset: 0.3,
-       size: 2.0
+       gyroControls: false,
+       minHeight: 200.00,
+       minWidth: 200.00,
+       scale: 1.00,
+       scaleMobile: 1.00,
+       color: 0x8085d1,
+       backgroundColor: 0xfcfcfc,
+       points: 20.00,
+       maxDistance: 25.00,
+       spacing: 19.00
      })
    });
 
   </script>
   </script>
+  <style>
+   img, picture :global(img), svg {
+     margin-block: 1.0rem;
+     border-radius: 0.5rem;
+   }
+  </style>
