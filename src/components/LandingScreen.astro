@@ -1,0 +1,57 @@
+---
+import LeftPanel from "./LeftPanel.astro"
+---
+
+<div id="landing-screen" class="bg-slate-900">
+  <div
+    class="min-h-screen flex flex-row items-center"
+  >
+    <div class="basis-1/4 mx-5 w-30 ">
+      <LeftPanel />
+      </div>
+    <div class = "mx-20">
+      <h1
+        class="text-7xl text-left font-bold"
+      >
+        Contour
+      </h1>
+      <p class="text-2xl">
+        is a modern and actually fast, modal, virtual terminal emulator, for everyday use. <br>
+        It is aiming for power users with a modern feature mindset.
+      </p>
+    </div>
+    <div></div>
+
+  </div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+    is:inline
+    defer
+    ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"
+    is:inline
+    defer
+    ></script>
+
+  <script>
+   addEventListener("DOMContentLoaded", (event) => {
+
+     VANTA.HALO({
+       el: "#landing-screen",
+       mouseControls: true,
+       touchControls: true,
+       gyroControls: true,
+       minHeight: 20.00,
+       minWidth: 20.00,
+       baseColor: 0x57752e,
+       backgroundColor: 0x051221,
+       amplitudeFactor: 1.0,
+       xOffset: 0.1,
+       yOffset: 0.3,
+       size: 2.0
+     })
+   });
+
+  </script>
+  </script>

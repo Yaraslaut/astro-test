@@ -1,0 +1,28 @@
+---
+import Card from "./Card.astro"
+import { VscGithub } from "react-icons/vsc";
+import { FaDiscord } from "react-icons/fa";
+
+---
+
+<div class="grid grid-cols-1 gap-10 justify-items-center">
+    <Card
+        href="/install"
+        title="Install"
+    />
+    <Card
+        href="/features"
+        title="Features"
+    />
+    <div>
+        <a href="https://discord.com/invite/ncv4pG9">
+            <FaDiscord className="w-8 h-8" />
+        </a>
+    </div>
+    <div>
+        <a href="https://github.com/contour-terminal/contour">
+            <VscGithub className="w-8 h-8" />
+        </a>
+    </div>
+
+</div>
